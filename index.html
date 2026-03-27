@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVEL VAULT — Premium Collectible Figures & Toys</title>
+    <meta name="description" content="Discover premium Marvel Studios collectible action figures. Shop Iron Man, Spider-Man, Black Panther, Thor, Captain America and more. Limited edition, museum-quality toys.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">Collection</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchBtn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="nav-btn cart-btn" id="cartBtn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">3</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-image" style="background-image: url('assets/hero-banner.png')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>MARVEL STUDIOS OFFICIAL</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">COLLECT THE</span>
+                <span class="title-line title-accent">MULTIVERSE</span>
+            </h1>
+            <p class="hero-subtitle">Premium collectible action figures from the Marvel Cinematic Universe. Museum-quality detail. Limited editions. Powered by Stark Industries technology.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">
+                    <span>EXPLORE COLLECTION</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#about" class="btn btn-ghost">
+                    <span>OUR STORY</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Collectibles</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">K+</span>
+                    <span class="stat-label">Collectors</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="35">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">MCU Characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// FEATURED COLLECTION</span>
+                <h2 class="section-title">PREMIUM <span class="text-gradient">FIGURES</span></h2>
+                <p class="section-desc">Hand-crafted, museum-quality action figures from the Marvel Cinematic Universe. Each piece is a masterwork of engineering and artistry.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1: Iron Man -->
+                <div class="product-card" id="product-iron-man">
+                    <div class="card-badge">NEW</div>
+                    <div class="card-image-wrap">
+                        <img src="assets/iron-man.png" alt="Iron Man Mark LXXXV collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #ff4444;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">AVENGERS: ENDGAME</span>
+                        <h3 class="card-title">Iron Man Mark LXXXV</h3>
+                        <p class="card-desc">Nano-tech armor with LED-lit Arc Reactor. Die-cast alloy construction.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$189.99</span>
+                                <span class="price-old">$249.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Iron Man to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Spider-Man -->
+                <div class="product-card" id="product-spider-man">
+                    <div class="card-badge bestseller">BEST SELLER</div>
+                    <div class="card-image-wrap">
+                        <img src="assets/spider-man.png" alt="Spider-Man Integrated Suit collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #e23636;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">NO WAY HOME</span>
+                        <h3 class="card-title">Spider-Man Integrated Suit</h3>
+                        <p class="card-desc">Articulated web-slinging pose. Magnetic web accessories included.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$159.99</span>
+                                <span class="price-old">$199.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Spider-Man to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Black Panther -->
+                <div class="product-card" id="product-black-panther">
+                    <div class="card-badge limited">LIMITED</div>
+                    <div class="card-image-wrap">
+                        <img src="assets/black-panther.png" alt="Black Panther Vibranium Suit collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #a855f7;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">WAKANDA FOREVER</span>
+                        <h3 class="card-title">Black Panther Vibranium</h3>
+                        <p class="card-desc">Kinetic energy suit with UV-reactive vibranium accents.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$219.99</span>
+                                <span class="price-old">$279.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Black Panther to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Thor -->
+                <div class="product-card" id="product-thor">
+                    <div class="card-image-wrap">
+                        <img src="assets/thor.png" alt="Thor God of Thunder collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #3b82f6;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">LOVE AND THUNDER</span>
+                        <h3 class="card-title">Thor God of Thunder</h3>
+                        <p class="card-desc">Stormbreaker with lightning FX. Asgardian armor detail.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$174.99</span>
+                                <span class="price-old">$229.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Thor to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Captain America -->
+                <div class="product-card" id="product-captain-america">
+                    <div class="card-image-wrap">
+                        <img src="assets/captain-america.png" alt="Captain America Shield Edition collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #2563eb;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">AVENGERS: ENDGAME</span>
+                        <h3 class="card-title">Captain America Shield</h3>
+                        <p class="card-desc">Vibranium shield replica. Super soldier serum articulation.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$164.99</span>
+                                <span class="price-old">$219.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Captain America to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Doctor Strange -->
+                <div class="product-card" id="product-doctor-strange">
+                    <div class="card-badge">NEW</div>
+                    <div class="card-image-wrap">
+                        <img src="assets/doctor-strange.png" alt="Doctor Strange Multiverse Edition collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #f97316;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">MULTIVERSE OF MADNESS</span>
+                        <h3 class="card-title">Doctor Strange Mystic</h3>
+                        <p class="card-desc">Illuminated spell circles. Cloak of Levitation fabric.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$199.99</span>
+                                <span class="price-old">$259.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Doctor Strange to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Hulk -->
+                <div class="product-card" id="product-hulk">
+                    <div class="card-badge limited">LIMITED</div>
+                    <div class="card-image-wrap">
+                        <img src="assets/hulk.png" alt="Hulk Smash Edition collectible action figure" loading="lazy">
+                        <div class="card-glow" style="--glow-color: #22c55e;"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-series">AVENGERS: AGE OF ULTRON</span>
+                        <h3 class="card-title">Hulk Smash Edition</h3>
+                        <p class="card-desc">Oversized 12" figure. Gamma-powered LED eyes. Destructible base.</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$234.99</span>
+                                <span class="price-old">$299.99</span>
+                            </div>
+                            <button class="card-cart-btn" aria-label="Add Hulk to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// BROWSE BY UNIVERSE</span>
+                <h2 class="section-title">SHOP BY <span class="text-gradient">CATEGORY</span></h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" id="cat-avengers">
+                    <div class="category-bg" style="--cat-color: #e23636;"></div>
+                    <div class="category-icon">⚡</div>
+                    <h3>The Avengers</h3>
+                    <span class="category-count">124 items</span>
+                </div>
+                <div class="category-card" id="cat-guardians">
+                    <div class="category-bg" style="--cat-color: #f97316;"></div>
+                    <div class="category-icon">🚀</div>
+                    <h3>Guardians of the Galaxy</h3>
+                    <span class="category-count">67 items</span>
+                </div>
+                <div class="category-card" id="cat-xmen">
+                    <div class="category-bg" style="--cat-color: #eab308;"></div>
+                    <div class="category-icon">🧬</div>
+                    <h3>X-Men</h3>
+                    <span class="category-count">89 items</span>
+                </div>
+                <div class="category-card" id="cat-spiderverse">
+                    <div class="category-bg" style="--cat-color: #e23636;"></div>
+                    <div class="category-icon">🕷️</div>
+                    <h3>Spider-Verse</h3>
+                    <span class="category-count">53 items</span>
+                </div>
+                <div class="category-card" id="cat-villains">
+                    <div class="category-bg" style="--cat-color: #a855f7;"></div>
+                    <div class="category-icon">💀</div>
+                    <h3>Villains</h3>
+                    <span class="category-count">96 items</span>
+                </div>
+                <div class="category-card" id="cat-limited">
+                    <div class="category-bg" style="--cat-color: #3b82f6;"></div>
+                    <div class="category-icon">💎</div>
+                    <h3>Limited Editions</h3>
+                    <span class="category-count">31 items</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Brand Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">// WHY MARVEL VAULT</span>
+                    <h2 class="section-title">ENGINEERED BY <span class="text-gradient">STARK TECH</span></h2>
+                    <p class="about-text">Every MarvelVault collectible is crafted with the same obsessive attention to detail that Tony Stark puts into his suits. We use premium die-cast alloys, hand-painted finishes, and state-of-the-art articulation systems.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Authentic Licensed</h4>
+                                <p>Official Marvel Studios merchandise with holographic certificates of authenticity.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Premium Materials</h4>
+                                <p>Die-cast alloy, hand-painted finishes, LED integration, and fabric elements.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Museum Quality</h4>
+                                <p>1:6 scale detail accuracy. Screen-matched colors. Collector-grade packaging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card-stack">
+                        <div class="about-img-card card-1">
+                            <img src="assets/iron-man.png" alt="Iron Man figure close-up">
+                        </div>
+                        <div class="about-img-card card-2">
+                            <img src="assets/thor.png" alt="Thor figure close-up">
+                        </div>
+                        <div class="about-img-card card-3">
+                            <img src="assets/doctor-strange.png" alt="Doctor Strange figure close-up">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// COLLECTOR TESTIMONIALS</span>
+                <h2 class="section-title">TRUSTED BY <span class="text-gradient">HEROES</span></h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card" id="review-1">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The Iron Man Mark LXXXV is absolutely breathtaking. The LED Arc Reactor and the nano-tech armor detail is beyond anything I've ever seen. True Stark Industries quality."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">P</div>
+                        <div>
+                            <span class="author-name">Peter Parker</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" id="review-2">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"My Black Panther Vibranium Edition arrives in premium packaging and the UV-reactive suit is just stunning. Wakanda Forever! This is museum-worthy art."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">S</div>
+                        <div>
+                            <span class="author-name">Shuri Udaku</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" id="review-3">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The Doctor Strange figure with illuminated spell circles is pure magic. Literally. Best collectible purchase I've made this year. The Cloak of Levitation fabric is incredible."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">W</div>
+                        <div>
+                            <span class="author-name">Wong Chen</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / CTA Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="section-container">
+            <div class="newsletter-content">
+                <div class="newsletter-glow"></div>
+                <span class="section-tag">// JOIN THE AVENGERS INITIATIVE</span>
+                <h2 class="section-title">GET <span class="text-gradient">EARLY ACCESS</span></h2>
+                <p class="newsletter-desc">Join 50,000+ collectors. Get first access to limited editions, exclusive drops, and member-only pricing. Assemble with us.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" id="emailInput" placeholder="Enter your email address" required autocomplete="email">
+                        <button type="submit" class="btn btn-primary">
+                            <span>ASSEMBLE</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </form>
+                <p class="form-disclaimer">By joining, you agree to our Terms of Service. No spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+                    </a>
+                    <p class="footer-desc">Premium Marvel Studios collectibles for true believers. Every figure tells a story from the MCU.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Instagram">◎</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶</a>
+                        <a href="#" class="social-link" aria-label="Discord">◈</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>SHOP</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                        <li><a href="#">Pre-Orders</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MarvelVault. All rights reserved. Marvel and all related characters are trademarks of Marvel Entertainment, LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
