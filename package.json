@@ -1,25 +1,31 @@
 {
   "name": "antigravity-github-test",
-  "version": "1.0.0",
-  "description": "![MarvelVault Hero](assets/hero-banner.png)",
+  "version": "1.1.0",
+  "description": "MarvelVault – Premium Marvel Studios Collectible Figures landing page with futuristic dark theme and interactive UI.",
   "main": "script.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "start": "serve ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kanishknegi2006-oss/antigravity-github-test.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": ["marvel", "collectibles", "landing-page", "premium", "futuristic"],
+  "author": "Kanishk Negi",
+  "license": "MIT",
+  "private": true,
   "bugs": {
     "url": "https://github.com/kanishknegi2006-oss/antigravity-github-test/issues"
   },
   "homepage": "https://github.com/kanishknegi2006-oss/antigravity-github-test#readme",
   "devDependencies": {
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "serve": "^14.2.0",
+    "eslint": "^8.0.0"
   }
 }
