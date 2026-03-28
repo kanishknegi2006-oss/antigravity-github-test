@@ -1,0 +1,25 @@
+{
+  "name": "antigravity-github-test",
+  "version": "1.0.0",
+  "description": "![MarvelVault Hero](assets/hero-banner.png)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanishknegi2006-oss/antigravity-github-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kanishknegi2006-oss/antigravity-github-test/issues"
+  },
+  "homepage": "https://github.com/kanishknegi2006-oss/antigravity-github-test#readme",
+  "devDependencies": {
+    "vite": "^8.0.3"
+  }
+}
