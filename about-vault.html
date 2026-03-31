@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVEL VAULT — Hero Loadout Database</title>
+    <meta name="description" content="Explore the Hero Loadout Database. Detailed suit specifications, weapon systems, and combat gear for Iron Man, Doctor Strange, Captain America, Thor, Hulk, and Black Panther.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="about-page">
+    <!-- Animated Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/avengers-logo.png" alt="Avengers Logo" class="logo-icon-img">
+                <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="collection.html" class="nav-link">Collection</a></li>
+                <li><a href="about-vault.html" class="nav-link active">About</a></li>
+                <li><a href="index.html#reviews" class="nav-link">Reviews</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchBtn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="nav-btn cart-btn" id="cartBtn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">3</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full-page Hero Section — matches index.html background exactly -->
+    <section class="hero vault-hero-section" id="vault-top">
+        <!-- Background layers from index.html hero -->
+        <div class="hero-bg-image" style="background-image: url('assets/hero-liquid-bg.png')"></div>
+        <div class="hero-liquid-layer"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid-overlay"></div>
+
+        <!-- Hero Content + Grid — all inside the hero wrapper -->
+        <div class="vault-inner-content">
+            <!-- Title Banner -->
+            <div class="hero-content vault-title-block">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>S.H.I.E.L.D. CLASSIFIED DATABASE</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">HERO</span>
+                    <span class="title-line title-accent">LOADOUTS</span>
+                </h1>
+                <p class="hero-subtitle">Access classified suit specifications, weapon systems, and combat loadouts from the Avengers roster. Click any hero to unlock their full dossier.</p>
+            </div>
+
+            <!-- Section Label -->
+            <div class="vault-roster-header">
+                <span class="section-tag">// DATA ARCHIVE</span>
+                <h2 class="section-title">AVENGERS <span class="text-gradient">ROSTER</span></h2>
+            </div>
+
+            <!-- Hero Grid -->
+            <div class="vault-heroes-grid">
+                <!-- Hero 1: Iron Man -->
+                <div class="vault-hero-card" id="vault-iron-man" onclick="openVault(0)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/iron-man.png" alt="Iron Man Mark LXXXV">
+                        <div class="vault-card-glow" style="--glow-color: #ff4444;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">MK LXXXV</span>
+                        <h3 class="vault-card-name">IRON MAN</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero 2: Doctor Strange -->
+                <div class="vault-hero-card" id="vault-doctor-strange" onclick="openVault(1)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/doctor-strange.png" alt="Doctor Strange">
+                        <div class="vault-card-glow" style="--glow-color: #f97316;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">SORCERER SUPREME</span>
+                        <h3 class="vault-card-name">DOCTOR STRANGE</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero 3: Captain America -->
+                <div class="vault-hero-card" id="vault-captain-america" onclick="openVault(2)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/captain-america.png" alt="Captain America">
+                        <div class="vault-card-glow" style="--glow-color: #2563eb;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">SUPER SOLDIER</span>
+                        <h3 class="vault-card-name">CAPTAIN AMERICA</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero 4: Thor -->
+                <div class="vault-hero-card" id="vault-thor" onclick="openVault(3)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/thor.png" alt="Thor God of Thunder">
+                        <div class="vault-card-glow" style="--glow-color: #3b82f6;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">GOD OF THUNDER</span>
+                        <h3 class="vault-card-name">THOR</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero 5: Hulk -->
+                <div class="vault-hero-card" id="vault-hulk" onclick="openVault(4)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/hulk.png" alt="The Hulk">
+                        <div class="vault-card-glow" style="--glow-color: #22c55e;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">GAMMA MUTATE</span>
+                        <h3 class="vault-card-name">THE HULK</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero 6: Black Panther -->
+                <div class="vault-hero-card" id="vault-black-panther" onclick="openVault(5)">
+                    <div class="vault-card-scan-line"></div>
+                    <div class="vault-card-image">
+                        <img src="assets/black-panther.png" alt="Black Panther">
+                        <div class="vault-card-glow" style="--glow-color: #a855f7;"></div>
+                    </div>
+                    <div class="vault-card-info">
+                        <span class="vault-card-designation">KING OF WAKANDA</span>
+                        <h3 class="vault-card-name">BLACK PANTHER</h3>
+                        <span class="vault-card-status">
+                            <span class="status-dot"></span>
+                            CLICK TO SCAN
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vault Modal -->
+    <div class="modal-overlay" id="vaultModal">
+        <div class="modal-content">
+            <button class="close-vault" id="closeVaultBtn" onclick="closeVault()" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-visual">
+                    <div class="modal-visual-ring"></div>
+                    <img id="modalHeroImg" src="" alt="Hero">
+                </div>
+                <div class="modal-text">
+                    <span class="modal-tag" id="modalTag"></span>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalDesc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <img src="assets/avengers-logo.png" alt="Avengers Logo" class="logo-icon-img">
+                        <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+                    </a>
+                    <p class="footer-desc">Premium Marvel Studios collectibles for true believers. Every figure tells a story from the MCU.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Instagram">◎</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶</a>
+                        <a href="#" class="social-link" aria-label="Discord">◈</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>SHOP</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                        <li><a href="#">Pre-Orders</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="about-vault.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MarvelVault. All rights reserved. Marvel and all related characters are trademarks of Marvel Entertainment, LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

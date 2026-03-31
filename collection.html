@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLECTION — MARVEL VAULT</title>
+    <meta name="description" content="Explore the complete Marvel Vault collection of premium action figures, categorized by universe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="collection-page">
+    <!-- Animated Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/avengers-logo.png" alt="Avengers Logo" class="logo-icon-img">
+                <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="#assets" class="nav-link active">Collection</a></li>
+                <li><a href="about-vault.html" class="nav-link">About</a></li>
+                <li><a href="index.html#newsletter" class="nav-link">Join Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchBtn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="nav-btn cart-btn" id="cartBtn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">3</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collection Hero -->
+    <header class="collection-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="section-container">
+            <div class="hero-content">
+                <span class="section-tag">// ACCESSING DATA VAULT</span>
+                <h1 class="hero-title"><span class="text-gradient">THE COLLECTION</span></h1>
+                <p class="section-desc">Browse our full archive of museum-quality collectibles, engineered for the ultimate Marvel fan.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-navigation -->
+    <div class="sub-nav" id="subNav">
+        <div class="section-container">
+            <div class="sub-nav-links">
+                <a href="#assets" class="sub-nav-link active">Assets</a>
+                <a href="#categories" class="sub-nav-link">Categories</a>
+                <a href="about-vault.html" class="sub-nav-link">About</a>
+                <a href="#reviews" class="sub-nav-link">Reviews</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assets Section (Products) -->
+    <section class="products" id="assets">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// DIGITAL ASSETS</span>
+                <h2 class="section-title">PREMIUM <span class="text-gradient">FIGURES</span></h2>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded via script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// BROWSE BY UNIVERSE</span>
+                <h2 class="section-title">SHOP BY <span class="text-gradient">CATEGORY</span></h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card reveal" id="cat-avengers">
+                    <div class="category-bg" style="--cat-color: #e23636;"></div>
+                    <div class="category-icon">⚡</div>
+                    <h3>The Avengers</h3>
+                    <span class="category-count">124 items</span>
+                </div>
+                <div class="category-card reveal" id="cat-guardians">
+                    <div class="category-bg" style="--cat-color: #f97316;"></div>
+                    <div class="category-icon">🚀</div>
+                    <h3>Guardians of the Galaxy</h3>
+                    <span class="category-count">67 items</span>
+                </div>
+                <div class="category-card reveal" id="cat-xmen">
+                    <div class="category-bg" style="--cat-color: #eab308;"></div>
+                    <div class="category-icon">🧬</div>
+                    <h3>X-Men</h3>
+                    <span class="category-count">89 items</span>
+                </div>
+                <div class="category-card reveal" id="cat-spiderverse">
+                    <div class="category-bg" style="--cat-color: #e23636;"></div>
+                    <div class="category-icon">🕷️</div>
+                    <h3>Spider-Verse</h3>
+                    <span class="category-count">53 items</span>
+                </div>
+                <div class="category-card reveal" id="cat-villains">
+                    <div class="category-bg" style="--cat-color: #a855f7;"></div>
+                    <div class="category-icon">💀</div>
+                    <h3>Villains</h3>
+                    <span class="category-count">96 items</span>
+                </div>
+                <div class="category-card reveal" id="cat-limited">
+                    <div class="category-bg" style="--cat-color: #3b82f6;"></div>
+                    <div class="category-icon">💎</div>
+                    <h3>Limited Editions</h3>
+                    <span class="category-count">31 items</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">// WHY MARVEL VAULT</span>
+                    <h2 class="section-title">ENGINEERED BY <span class="text-gradient">STARK TECH</span></h2>
+                    <p class="about-text">Every MarvelVault collectible is crafted with the same obsessive attention to detail that Tony Stark puts into his suits. We use premium die-cast alloys, hand-painted finishes, and state-of-the-art articulation systems.</p>
+                    <div class="features-list">
+                        <div class="feature-item reveal">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Authentic Licensed</h4>
+                                <p>Official Marvel Studios merchandise with holographic certificates of authenticity.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item reveal">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Premium Materials</h4>
+                                <p>Die-cast alloy, hand-painted finishes, LED integration, and fabric elements.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item reveal">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Museum Quality</h4>
+                                <p>1:6 scale detail accuracy. Screen-matched colors. Collector-grade packaging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="about-card-stack">
+                        <div class="about-img-card card-1">
+                            <img src="assets/iron-man.png" alt="Iron Man figure close-up">
+                        </div>
+                        <div class="about-img-card card-2">
+                            <img src="assets/thor.png" alt="Thor figure close-up">
+                        </div>
+                        <div class="about-img-card card-3">
+                            <img src="assets/doctor-strange.png" alt="Doctor Strange figure close-up">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">// COLLECTOR TESTIMONIALS</span>
+                <h2 class="section-title">TRUSTED BY <span class="text-gradient">HEROES</span></h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal" id="review-1">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The Iron Man Mark LXXXV is absolutely breathtaking. The LED Arc Reactor and the nano-tech armor detail is beyond anything I've ever seen. True Stark Industries quality."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">P</div>
+                        <div>
+                            <span class="author-name">Peter Parker</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal" id="review-2">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"My Black Panther Vibranium Edition arrives in premium packaging and the UV-reactive suit is just stunning. Wakanda Forever! This is museum-worthy art."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">S</div>
+                        <div>
+                            <span class="author-name">Shuri Udaku</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal" id="review-3">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The Doctor Strange figure with illuminated spell circles is pure magic. High-quality fabric elements and incredible detailing."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">W</div>
+                        <div>
+                            <span class="author-name">Wong Chen</span>
+                            <span class="author-role">Verified Collector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <img src="assets/avengers-logo.png" alt="Avengers Logo" class="logo-icon-img">
+                        <span class="logo-text">MARVEL<span class="logo-accent">VAULT</span></span>
+                    </a>
+                    <p class="footer-desc">Premium Marvel Studios collectibles for true believers.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MarvelVault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
