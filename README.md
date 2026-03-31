@@ -1,104 +1,114 @@
-# MarvelVault – Premium Marvel Studios Collectible Figures
+# 🌌 MarvelVault — Cinematic Collectible Intelligence
 
-![MarvelVault Hero](assets/hero-banner.png)
+<div align="center">
+  <img src="assets/avengers-logo.png" alt="MarvelVault Logo" width="300">
+  <br>
+  <h3>Advanced Digital Archive & Premium Collectibles Hub</h3>
+  <p><i>Building the future of Marvel fandom with futuristic UI, glassmorphism, and cinematic aesthetics.</i></p>
 
-A futuristic, premium landing page showcasing high‑end Marvel collectible action figures. The site features a dark, neon‑accented UI, animated particle background, glass‑morphism product cards, and smooth micro‑interactions.
-
----
-
-## ✨ Features
-- **Futuristic Design** – Dark theme with neon red, purple, and blue accents, custom gradients, and animated grid overlay.
-- **Animated Particle Background** – Interactive particle network that reacts to mouse movement.
-- **Glass‑morphism Product Cards** – Hover lift, glow effects, 3D tilt on mouse move, and dynamic price display.
-- **Responsive Layout** – Optimized for desktop, tablet, and mobile devices.
-- **Smooth Scroll & Navigation** – Sticky navbar with scroll‑activated link highlighting and a mobile hamburger menu.
-- **Counters & Stats** – Animated counters for collectibles, collectors, and MCU characters.
-- **Testimonials** – Styled review cards with star ratings.
-- **Newsletter CTA** – Email capture form with animated submit button.
-- **Fully Static** – No backend required; can be served with any static file server.
+  <p>
+    <img src="https://img.shields.io/badge/Version-1.1.0-e23636?style=for-the-badge" alt="Version">
+    <img src="https://img.shields.io/badge/Powered%20By-Vite-646CFF?style=for-the-badge&logo=vite" alt="Vite">
+    <img src="https://img.shields.io/badge/Design-Glassmorphism-00c3ff?style=for-the-badge" alt="Design">
+  </p>
+</div>
 
 ---
 
-## 📦 Tech Stack
-- **HTML5** – Semantic markup.
-- **CSS3** – Custom design system, variables, animations, and responsive grid.
-- **JavaScript (ES6)** – Particle system, scroll effects, intersection observers, and UI interactions.
-- **Google Fonts** – `Orbitron`, `Rajdhani`, and `Inter` for futuristic typography.
-- **Serve** – Simple static server (`npx -y serve .`).
+## 📽️ Project Overview
+
+**MarvelVault** is a high-end, immersive web application designed for elite collectors and Marvel enthusiasts. Inspired by the Stark Industries and S.H.I.E.L.D. tech interfaces, the platform provides a seamless, cinematic experience for exploring premium collectible figures and accessing classified hero data.
+
+### ✨ Key Technical Features
+
+- **Living Background Architecture**
+  - **Hero Liquid Layer**: Dynamic, shifting radial gradients that move like liquid energy.
+  - **Neon Grid Pulse**: A S.H.I.E.L.D. style spatial grid that shifts and glows in sync with the environment.
+  - **Particle Intelligence**: Interactive particle network that reacts to user proximity and movement.
+
+- **The Hero Vault (About Page)**
+  - A dedicated intelligence archive featuring detailed dossiers for the Avengers.
+  - **Glassmorphism Grid**: Translucent, high-blur cards that show the animated background through the UI.
+  - **Tactical Dossiers**: Interactive modals providing classified suit specifications and vault notes.
+
+- **Performance-First Core**
+  - Built with **Vite** for lightning-fast HMR and optimized asset delivery.
+  - **Zero-Dependency Animations**: Pure CSS keyframes and optimized Vanilla JS for smooth 60fps interactions.
+  - **Responsive Tactical Interface**: Fully optimized for Desktop, Tablet, and Mobile deployment.
 
 ---
 
-## 🚀 Getting Started
-### Prerequisites
-- **Node.js** (v14+ recommended) – only needed for the `serve` command.
+## 🛠️ Tactical Stack
 
-### Installation
+- **Core**: HTML5 Semantic Architecture
+- **Styling**: Vanilla CSS3 (Custom Design Tokens, Variable-driven System)
+- **Logic**: Vanilla JavaScript ES6+
+- **Tooling**: Vite (Frontend Tooling)
+- **Typography**: `Orbitron`, `Rajdhani`, & `Inter` (Google Fonts)
+
+---
+
+## 🚀 Deployment Command Center
+
+### Initializing the System
+
 ```bash
-# Clone the repository
-git clone https://github.com/kanishknegi2006-oss/antigravity-github-test.git
-cd antigravity-github-test
+# Clone the tactical archive
+git clone https://github.com/kanishknegi2006-oss/marvel-site.git
+
+# Enter the mission directory
+cd marvel-site
+
+# Initialize dependencies
+npm install
+
+# Launch the tactical interface
+npm run dev
 ```
 
-### Running Locally
-```bash
-# Start a static server (no installation needed)
-npx -y serve .
-```
-Open your browser and navigate to the URL shown in the terminal (usually `http://localhost:3000`).
+The system will initialize at `http://localhost:5173`.
 
 ---
 
-## 📸 Screenshots
-| Section | Screenshot |
-|---|---|
-| **Hero** | ![Hero Section](assets/hero-banner.png) |
-| **Products** | ![Products](assets/iron-man.png) |
-| **Categories** | ![Categories](assets/spider-man.png) |
-| **About** | ![About](assets/thor.png) |
-| **Reviews** | ![Reviews](assets/doctor-strange.png) |
-| **Newsletter** | ![Newsletter](assets/captain-america.png) |
+## 📂 Mission Structure
 
----
-
-## 🛠️ Customisation
-- **Design Tokens** – Edit `styles.css` under `:root` to change colors, fonts, radii, and shadows.
-- **Products** – Add or remove product cards in the `#products` section of `index.html`. Update images in the `assets/` folder.
-- **Particle Background** – Adjust particle count, speed, and colors in `script.js` (look for the `Particle` class).
-
----
-
-## 📂 Project Structure
-```
-├─ assets/                 # Image assets for products & hero banner
-│   ├─ iron-man.png
-│   ├─ spider-man.png
-│   ├─ black-panther.png
-│   ├─ thor.png
-│   ├─ captain-america.png
-│   ├─ doctor-strange.png
-│   ├─ hulk.png
-│   └─ hero-banner.png
-├─ index.html              # Main landing page markup
-├─ styles.css              # Global stylesheet & design system
-├─ script.js               # Interactive JavaScript
-├─ README.md               # **You are reading it!**
-└─ .gitignore (optional)
+```text
+marvel-site/
+├── assets/                 # High-fidelity multimedia assets
+├── index.html              # Main Landing Interface
+├── about-vault.html        # Classified Hero Database
+├── collection.html         # Premium Asset Hub
+├── script.js               # Logic & Interaction Engine
+├── styles.css              # Universal Design System
+└── package.json            # Deployment Manifest
 ```
 
 ---
 
-## 🤝 Contributing
-Feel free to open issues or submit pull requests for:
-- Adding new Marvel characters.
-- Enhancing animations or UI effects.
-- Improving accessibility.
+## 📸 Intelligence Gallery
+
+<table align="center">
+  <tr>
+    <td align="center"><b>Command Center (Hero)</b></td>
+    <td align="center"><b>Classified Archive (Vault)</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/hero-banner.png" width="400"></td>
+    <td><img src="assets/hero-loadout-preview.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Glassmorphism UI</b></td>
+    <td align="center"><b>Tactical Dossiers</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/hero-liquid-bg.png" width="400"></td>
+    <td><img src="assets/modal-preview.png" width="400"></td>
+  </tr>
+</table>
 
 ---
 
-## 📄 License
-This project is open‑source and available under the **MIT License**.
-
----
-
-## 🎉 Demo
-Run the local server as described above and explore the full experience at `http://localhost:3000`.
+<div align="center">
+  <p>© 2026 MarvelVault Intelligence Bureau. Unauthorized access is strictly prohibited.</p>
+  <sub>This project is a fan-made tribute to the Marvel Cinematic Universe and its incredible design language.</sub>
+</div>
