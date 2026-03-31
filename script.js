@@ -1,17 +1,36 @@
 /* ===== MARVEL VAULT — Interactive JavaScript with Static Data ===== */
 
-// ===== Particle Background =====
-const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-let mouse = { x: null, y: null };
+import LiquidBackground from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js'
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+/* ===== Three.js Liquid Background ===== */
+// Initialize on existing canvas
+const backgroundCanvas = document.getElementById('particleCanvas');
+const app = LiquidBackground(backgroundCanvas);
+
+// Configuration for cinematic "Chrome/Metallic" look
+if (app) {
+    // Load background image texture
+    const bgImgSource = 'assets/hero-liquid-bg.png';
+    app.loadImage(bgImgSource);
+
+    // Apply material properties for the mercury/chrome effect
+    app.liquidPlane.material.metalness = 0.9;
+    app.liquidPlane.material.roughness = 0.1;
+
+    // Deeper waves for more dynamic look
+    if (app.liquidPlane.uniforms && app.liquidPlane.uniforms.displacementScale) {
+        app.liquidPlane.uniforms.displacementScale.value = 8;
+    }
+
+    // Disable rain to keep the tech-focused UI clean
+    app.setRain(false);
 }
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+else {
+    // FALLBACK FOR MOBILE: 
+    // Use your original CSS-based animated background logic here 
+    // to save battery and processing power.
+    console.log("Mobile detected: WebGL background disabled for performance.");
+}
 
 // ===== Intersection Observer for Scroll Animations =====
 const revealObserver = new IntersectionObserver((entries) => {
@@ -31,108 +50,6 @@ function initReveals() {
     });
 }
 
-document.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-});
-
-class Particle {
-    constructor() {
-        this.reset();
-    }
-
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.opacity = Math.random() * 0.5 + 0.1;
-        this.color = this.getRandomColor();
-    }
-
-    getRandomColor() {
-        const colors = [
-            '226, 54, 54',    // Marvel red
-            '168, 85, 247',   // Purple
-            '59, 130, 246',   // Blue
-            '6, 182, 212',    // Cyan
-        ];
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (mouse.x !== null && mouse.y !== null) {
-            const dx = this.x - mouse.x;
-            const dy = this.y - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                this.x += dx / dist * 0.8;
-                this.y += dy / dist * 0.8;
-            }
-        }
-
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-        ctx.fill();
-
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = `rgba(${this.color}, ${this.opacity * 0.5})`;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-    }
-}
-
-function initParticles() {
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
-    particles = [];
-    for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
-    }
-}
-
-function drawConnections() {
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 150) {
-                const opacity = (1 - dist / 150) * 0.15;
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(226, 54, 54, ${opacity})`;
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.update();
-        p.draw();
-    });
-    drawConnections();
-    requestAnimationFrame(animateParticles);
-}
-
-initParticles();
-animateParticles();
 
 // ===== Static Product Data =====
 const PRODUCTS = [
@@ -273,7 +190,7 @@ function attachProductInteractions() {
 
     // Re-attach Cart Logic
     document.querySelectorAll('.card-cart-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             e.stopPropagation();
             this.style.transform = 'scale(0.8)';
             setTimeout(() => {
@@ -368,7 +285,7 @@ if (newsletterForm) {
             btn.textContent = 'ASSEMBLED ✓';
             input.value = '';
             input.placeholder = 'Welcome to the Avengers Initiative!';
-            
+
             setTimeout(() => {
                 btn.textContent = originalText;
                 input.placeholder = 'Enter your email address';
@@ -381,7 +298,7 @@ if (newsletterForm) {
 function initSubNav() {
     const subNavLinks = document.querySelectorAll('.sub-nav-link');
     const sections = document.querySelectorAll('section[id]');
-    
+
     if (subNavLinks.length === 0) return;
 
     window.addEventListener('scroll', () => {
@@ -411,10 +328,11 @@ const HERO_DATA = [
         image: "assets/iron-man.png",
         glowColor: "#ff4444",
         description: `
-            <p><strong>DESIGNATION:</strong> MARK LXXXV (85)</p>
-            <p><strong>SUIT TYPE:</strong> Nanotechnology / Die-cast Alloy Hybrid.</p>
-            <p><strong>KEY LOADOUT:</strong> Features a Nano Lightning Refocuser to redirect energy and a Hard-light Energy Shield.</p>
-            <p><strong>VAULT NOTE:</strong> Tony Stark's final masterpiece, integrating the sleekness of the Mark L with traditional heavy plating.</p>
+            <p><strong>SUIT TYPE:</strong> Nano-tech / Die-cast Alloy Hybrid.</p>
+            <p><strong>KEY FEATURES:</strong> * <strong>Nano Lightning Refocuser:</strong> Large back-mounted apparatus to absorb and redirect energy.</p>
+            <p><strong>ENERGY SHIELD:</strong> Hard-light blue shield capable of protecting multiple people.</p>
+            <p><strong>NANO GAUNTLET INTEGRATION:</strong> The suit’s right hand can shift into a containment vessel for the Infinity Stones.</p>
+            <p><strong>SUIT HISTORY:</strong> Tony Stark's final masterpiece, combining the sleekness of the Mark L with more traditional, durable plating.</p>
         `
     },
     {
@@ -423,10 +341,10 @@ const HERO_DATA = [
         image: "assets/doctor-strange.png",
         glowColor: "#f97316",
         description: `
-            <p><strong>DESIGNATION:</strong> MASTER OF THE MYSTIC ARTS</p>
-            <p><strong>PRIMARY RELICS:</strong> The sentient Cloak of Levitation and the Eye of Agamotto.</p>
-            <p><strong>KEY LOADOUT:</strong> Sling Ring for interdimensional travel and illuminated Eldritch Magic spell circles.</p>
-            <p><strong>VAULT NOTE:</strong> Attire crafted from high-quality layered wool with intricate screen-matched embroidery.</p>
+            <p><strong>PRIMARY RELICS:</strong> * <strong>Cloak of Levitation:</strong> A sentient, ancient relic that provides flight and has a "personality" of its own. It often acts independently to protect Strange.</p>
+            <p><strong>EYE OF AGAMOTTO:</strong> A pendant traditionally used to house the Time Stone, capable of manipulating local time flows.</p>
+            <p><strong>SLING RING:</strong> A small double-finger ring used to open interdimensional portals.</p>
+            <p><strong>ATTIRE:</strong> High-quality layered Japanese wool with intricate embroidery.</p>
         `
     },
     {
@@ -435,10 +353,9 @@ const HERO_DATA = [
         image: "assets/captain-america.png",
         glowColor: "#2563eb",
         description: `
-            <p><strong>DESIGNATION:</strong> THE FIRST AVENGER</p>
-            <p><strong>PRIMARY WEAPON:</strong> 2.5ft Diameter Vibranium-Steel Alloy Shield.</p>
-            <p><strong>KEY LOADOUT:</strong> Reinforced Kevlar-weave tactical suit with magnetic shield mounts.</p>
-            <p><strong>VAULT NOTE:</strong> This edition commemorates the moment Rogers proved "worthy" to wield Mjolnir.</p>
+            <p><strong>THE SHIELD:</strong> A 2.5-foot diameter concavo-convex disc made of a unique Vibranium-Steel alloy. It absorbs nearly all kinetic energy and vibrations.</p>
+            <p><strong>THE SUIT:</strong> Designed for high-impact combat with reinforced Kevlar-like weaving and magnetic mounts for the shield on the back and forearm.</p>
+            <p><strong>SPECIAL NOTE:</strong> In his final battle, Rogers also proved "worthy" to wield Mjolnir, granting him the powers of Thor.</p>
         `
     },
     {
@@ -447,10 +364,9 @@ const HERO_DATA = [
         image: "assets/thor.png",
         glowColor: "#3b82f6",
         description: `
-            <p><strong>DESIGNATION:</strong> GOD OF THUNDER</p>
-            <p><strong>PRIMARY WEAPONS:</strong> Stormbreaker (Axe-hammer) and the enchanted Mjolnir.</p>
-            <p><strong>KEY LOADOUT:</strong> Asgardian metal plating with lightning manipulation focal points.</p>
-            <p><strong>VAULT NOTE:</strong> Stormbreaker is capable of summoning the Bifrost bridge for interstellar travel.</p>
+            <p><strong>WEAPONS:</strong> * <strong>Stormbreaker:</strong> An enchanted axe-hammer forged in Nidavellir; it can summon the Bifrost bridge for interstellar travel.</p>
+            <p><strong>MJOLNIR:</strong> His original hammer, enchanted by Odin so only the worthy can lift it.</p>
+            <p><strong>ARMOR:</strong> Asgardian metal plating with "Disc" motifs that act as focal points for lightning manipulation.</p>
         `
     },
     {
@@ -459,10 +375,10 @@ const HERO_DATA = [
         image: "assets/hulk.png",
         glowColor: "#22c55e",
         description: `
-            <p><strong>DESIGNATION:</strong> GAMMA-POWERED BEHEMOTH</p>
-            <p><strong>SUIT TYPE:</strong> Stark Industries Tactical Bodysuit (High-elasticity fabric).</p>
-            <p><strong>KEY LOADOUT:</strong> Nano Gauntlet integration and oversized 12-inch articulation.</p>
-            <p><strong>VAULT NOTE:</strong> Features Gamma-powered LED eyes and a specialized destructible base.</p>
+            <p><strong>PHYSICAL TRAITS:</strong> Green skin caused by excessive Gamma radiation exposure.</p>
+            <p><strong>LOADOUT (SMART HULK):</strong> * <strong>Tactical Bodysuit:</strong> A specialized, highly elastic fabric suit designed by Stark Industries to stretch without tearing during transformations.</p>
+            <p><strong>NANO GAUNTLET:</strong> Bruce was the only hero durable enough to survive the initial radiation surge of the Nano Gauntlet "Snap."</p>
+            <p><strong>POWERS:</strong> Infinite strength scaling with anger and a regenerative healing factor.</p>
         `
     },
     {
@@ -471,10 +387,9 @@ const HERO_DATA = [
         image: "assets/black-panther.png",
         glowColor: "#a855f7",
         description: `
-            <p><strong>DESIGNATION:</strong> KING OF WAKANDA</p>
-            <p><strong>SUIT TYPE:</strong> Triple-weave Vibranium Panther Habit.</p>
-            <p><strong>KEY LOADOUT:</strong> UV-reactive Vibranium accents and retractable Anti-metal claws.</p>
-            <p><strong>VAULT NOTE:</strong> The suit absorbs kinetic energy (purple glow) and releases it in radial pulses.</p>
+            <p><strong>THE HABIT:</strong> A triple-weave Vibranium suit that is completely bulletproof.</p>
+            <p><strong>SUIT TECH:</strong> * <strong>Kinetic Energy Distribution:</strong> The suit absorbs the force of impacts (glows purple) and can release that energy in a powerful radial pulse.</p>
+            <p><strong>RETRACTABLE CLAWS:</strong> Made of anti-metal Vibranium capable of slicing through almost any surface, including Captain America's shield.</p>
         `
     }
 ];
@@ -540,7 +455,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#') return;
-        
+
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
@@ -552,3 +467,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ===== Global Exports for HTML Event Handlers =====
+window.openVault = openVault;
+window.closeVault = closeVault;

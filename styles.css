@@ -19,7 +19,7 @@
     --accent-gold: #f59e0b;
 
     --gradient-hero: linear-gradient(135deg, #e23636 0%, #a855f7 50%, #3b82f6 100%);
-    --gradient-card: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.95) 100%);
+    --gradient-card: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.95) 100%);
     --gradient-text: linear-gradient(90deg, #e23636 0%, #f97316 30%, #a855f7 60%, #3b82f6 100%);
 
     --border-subtle: rgba(148, 163, 184, 0.1);
@@ -43,7 +43,9 @@
 }
 
 /* --- Reset --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -74,7 +76,9 @@ a {
     color: inherit;
 }
 
-ul { list-style: none; }
+ul {
+    list-style: none;
+}
 
 button {
     cursor: pointer;
@@ -99,9 +103,11 @@ button {
 ::-webkit-scrollbar {
     width: 6px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--marvel-red);
     border-radius: 10px;
@@ -158,8 +164,15 @@ button {
 }
 
 @keyframes logoPulse {
-    0%, 100% { filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.4)) brightness(1.3); }
-    50% { filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.6)) brightness(1.5); }
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.4)) brightness(1.3);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.6)) brightness(1.5);
+    }
 }
 
 .logo-text {
@@ -276,9 +289,17 @@ button {
     transition: var(--transition-smooth);
 }
 
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -301,14 +322,18 @@ button {
 }
 
 @keyframes liquidPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
         filter: saturate(1.2) brightness(0.8) hue-rotate(0deg);
     }
+
     33% {
         transform: scale(1.03);
         filter: saturate(1.4) brightness(0.85) hue-rotate(10deg);
     }
+
     66% {
         transform: scale(1.01);
         filter: saturate(1.1) brightness(0.75) hue-rotate(-5deg);
@@ -328,18 +353,23 @@ button {
 }
 
 @keyframes liquidFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) scale(1);
         opacity: 0.8;
     }
+
     25% {
         transform: translateY(-15px) scale(1.02);
         opacity: 1;
     }
+
     50% {
         transform: translateY(5px) scale(0.98);
         opacity: 0.7;
     }
+
     75% {
         transform: translateY(-8px) scale(1.01);
         opacity: 0.9;
@@ -349,14 +379,12 @@ button {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(3, 7, 18, 0.4) 0%,
-        rgba(3, 7, 18, 0.15) 30%,
-        rgba(3, 7, 18, 0.2) 60%,
-        rgba(3, 7, 18, 0.85) 90%,
-        rgba(3, 7, 18, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(3, 7, 18, 0.4) 0%,
+            rgba(3, 7, 18, 0.15) 30%,
+            rgba(3, 7, 18, 0.2) 60%,
+            rgba(3, 7, 18, 0.85) 90%,
+            rgba(3, 7, 18, 1) 100%);
 }
 
 .hero-grid-overlay {
@@ -370,8 +398,13 @@ button {
 }
 
 @keyframes gridShift {
-    0% { transform: perspective(500px) rotateX(0deg); }
-    100% { transform: perspective(500px) rotateX(2deg); }
+    0% {
+        transform: perspective(500px) rotateX(0deg);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(2deg);
+    }
 }
 
 .hero-content {
@@ -388,6 +421,7 @@ button {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -420,8 +454,15 @@ button {
 }
 
 @keyframes dotBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .hero-title {
@@ -448,7 +489,9 @@ button {
 }
 
 @keyframes shineText {
-    to { background-position: 200% center; }
+    to {
+        background-position: 200% center;
+    }
 }
 
 .hero-subtitle {
@@ -496,7 +539,7 @@ button {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transform: translateX(-100%);
     transition: 0.6s;
 }
@@ -592,14 +635,32 @@ button {
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
 }
 
 @keyframes lineGrow {
-    0% { opacity: 0; height: 20px; }
-    50% { opacity: 1; height: 40px; }
-    100% { opacity: 0; height: 20px; }
+    0% {
+        opacity: 0;
+        height: 20px;
+    }
+
+    50% {
+        opacity: 1;
+        height: 40px;
+    }
+
+    100% {
+        opacity: 0;
+        height: 20px;
+    }
 }
 
 /* ===== SECTIONS COMMON ===== */
@@ -662,19 +723,22 @@ button {
 }
 
 .product-card {
-    background: var(--bg-card);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(226, 54, 54, 0.3);
-    box-shadow: var(--shadow-glow), var(--shadow-card);
+    border-color: #e23636;
+    box-shadow:
+        0 0 40px rgba(226, 54, 54, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .card-badge {
@@ -708,7 +772,7 @@ button {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(10,15,30,0.3) 0%, rgba(3,7,18,0.6) 100%);
+    background: linear-gradient(180deg, rgba(10, 15, 30, 0.3) 0%, rgba(3, 7, 18, 0.6) 100%);
 }
 
 .card-image-wrap img {
@@ -832,14 +896,15 @@ button {
 .category-card {
     position: relative;
     padding: 2rem 1.5rem;
-    background: var(--bg-card);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     text-align: center;
     overflow: hidden;
     transition: var(--transition-smooth);
     cursor: pointer;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .category-card:hover {
@@ -1038,12 +1103,13 @@ button {
 }
 
 .review-card {
-    background: var(--bg-card);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: 2rem;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .review-card:hover {
@@ -1114,11 +1180,12 @@ button {
     max-width: 700px;
     margin: 0 auto;
     padding: 4rem 3rem;
-    background: var(--bg-card);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .newsletter-glow {
@@ -1516,7 +1583,8 @@ button {
 
 /* Adjustments for sections on collection page */
 .collection-page section {
-    scroll-margin-top: 140px; /* Account for navbar + subnav */
+    scroll-margin-top: 140px;
+    /* Account for navbar + subnav */
 }
 
 @media (max-width: 768px) {
@@ -1526,7 +1594,7 @@ button {
         justify-content: flex-start;
         padding: 0 1rem;
     }
-    
+
     .sub-nav-link {
         font-size: 0.6rem;
         white-space: nowrap;
@@ -1592,14 +1660,14 @@ button {
 /* --- Vault Hero Card (Glassmorphism) --- */
 .vault-hero-card {
     position: relative;
-    background: var(--bg-glass);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     overflow: hidden;
     cursor: pointer;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .vault-hero-card:hover {
@@ -1725,52 +1793,34 @@ button {
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(3, 7, 18, 0.9);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    display: none;
+    background: rgba(3, 7, 18, 0.95); /* Deeper dark overlay for better focus */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    display: none; /* Controlled by JS */
     align-items: center;
     justify-content: center;
     z-index: 2000;
     padding: 2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    animation: fadeIn 0.4s ease-out;
 }
 
-.modal-overlay.active {
+.active.modal-overlay {
     display: flex;
-    opacity: 1;
-    animation: fadeIn 0.35s ease-out;
 }
 
 .modal-content {
-    --modal-glow: #e23636;
-    background: rgba(10, 15, 30, 0.9);
-    border: 1px solid var(--modal-glow);
+    background: var(--bg-card);
+    border: 1px solid var(--marvel-red);
     border-radius: var(--radius-xl);
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
+    padding: 4.5rem;
+    position: relative;
+    box-shadow: 0 0 70px rgba(226, 54, 54, 0.25);
+    overflow: hidden;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 3.5rem;
-    position: relative;
-    box-shadow:
-        0 0 60px rgba(226, 54, 54, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    border: 1px solid rgba(226, 54, 54, 0.3);
 }
 
 /* Futuristic "Scanning" Line Effect */
@@ -1781,9 +1831,10 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(226, 54, 54, 0.04), transparent);
+    background: linear-gradient(to bottom, transparent, rgba(226, 54, 54, 0.08), transparent);
     animation: scanLine 4s linear infinite;
     pointer-events: none;
+    z-index: 5;
 }
 
 /* Neon border pulse */
@@ -1799,14 +1850,20 @@ button {
 }
 
 @keyframes borderPulse {
-    0%, 100% { opacity: 0; box-shadow: 0 0 15px var(--modal-glow); }
-    50% { opacity: 0.5; box-shadow: 0 0 35px var(--modal-glow); }
+    0%, 100% {
+        opacity: 0;
+        box-shadow: 0 0 15px var(--modal-glow);
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 35px var(--modal-glow);
+    }
 }
 
 .modal-body {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 3.5rem;
+    gap: 4.5rem;
     align-items: center;
 }
 
@@ -1820,57 +1877,51 @@ button {
 
 .modal-visual-ring {
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
     border: 1px solid rgba(226, 54, 54, 0.15);
     border-radius: 50%;
     animation: ringRotate 15s linear infinite;
 }
 
-.modal-visual-ring::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    width: 6px;
-    height: 6px;
-    background: var(--modal-glow);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--modal-glow);
-}
-
 @keyframes ringRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .modal-visual img {
-    max-height: 420px;
+    max-height: 500px;
     object-fit: contain;
-    filter: drop-shadow(0 0 40px rgba(226, 54, 54, 0.3));
+    filter: drop-shadow(0 0 35px rgba(226, 54, 54, 0.5));
     animation: floatingHero 4s ease-in-out infinite;
     z-index: 2;
-    position: relative;
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 /* Info Section Styling */
 .modal-tag {
     font-family: var(--font-display);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     color: var(--marvel-red);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 .modal-text h2 {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    letter-spacing: 4px;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.1;
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1879,58 +1930,46 @@ button {
 
 .modal-text p {
     color: var(--text-secondary);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
     line-height: 1.8;
-    border-left: 2px solid var(--modal-glow);
-    padding-left: 1.2rem;
-    transition: var(--transition-fast);
-}
-
-.modal-text p:hover {
-    border-left-color: var(--text-primary);
-    color: var(--text-primary);
+    border-left: 2px solid var(--marvel-red);
+    padding-left: 1.5rem;
 }
 
 .modal-text strong {
     color: var(--text-primary);
     font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.9rem;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 /* Close Button */
 .close-vault {
     position: absolute;
-    top: 20px;
-    right: 24px;
-    font-size: 2.2rem;
+    top: 35px;
+    right: 35px;
+    font-size: 2.5rem;
     color: var(--text-muted);
     transition: var(--transition-fast);
     z-index: 10;
+    cursor: pointer;
     background: none;
     border: none;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    border: 1px solid var(--border-subtle);
 }
 
 .close-vault:hover {
     color: var(--marvel-red);
-    border-color: var(--marvel-red);
     transform: rotate(90deg);
-    box-shadow: 0 0 20px rgba(226, 54, 54, 0.3);
 }
 
-/* Scrollbar for modal */
+/* Scrollbar for modal content if it overflows */
 .modal-content::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 .modal-content::-webkit-scrollbar-thumb {
     background: var(--marvel-red);
@@ -1939,24 +1978,40 @@ button {
 
 /* ===== VAULT ANIMATIONS ===== */
 @keyframes scanLine {
-    0% { top: -100%; }
-    100% { top: 100%; }
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
 }
 
 @keyframes floatingHero {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(1.5deg); }
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ===== VAULT RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .vault-heroes-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .modal-content {
+        padding: 3.5rem;
+        max-width: 900px;
+    }
+    .modal-text h2 {
+        font-size: 2.8rem;
     }
 }
 
@@ -1964,50 +2019,38 @@ button {
     .modal-body {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 3rem;
     }
-
-    .modal-visual img {
-        max-height: 300px;
-    }
-
-    .modal-visual-ring {
-        width: 220px;
-        height: 220px;
-    }
-
     .modal-text p {
         border-left: none;
-        border-top: 1px solid var(--modal-glow);
-        padding: 1rem 0 0;
-        padding-left: 0;
+        border-top: 1px solid var(--marvel-red);
+        padding: 1.5rem 0;
+        text-align: left;
     }
-
-    .modal-content {
-        padding: 2.5rem 1.5rem;
+    .modal-visual img {
+        max-height: 380px;
+    }
+    .modal-visual-ring {
+        width: 280px;
+        height: 280px;
+    }
+    .modal-text h2 {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 600px) {
-    .vault-heroes-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .vault-card-image {
-        height: 240px;
-    }
-
     .modal-content {
-        padding: 2rem 1rem;
+        padding: 3rem 1.5rem;
     }
-
     .modal-visual img {
-        max-height: 220px;
+        max-height: 280px;
     }
-
-    .vault-hero-section {
-        padding-top: 8rem;
-        padding-bottom: 4rem;
+    .modal-text h2 {
+        font-size: 1.8rem;
+    }
+    .close-vault {
+        top: 20px;
+        right: 20px;
     }
 }
