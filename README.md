@@ -1,17 +1,79 @@
-# ⚡ MARVEL VAULT
+<div align="center">
+  <img src="assets/avengers-logo.png" alt="Marvel Vault Logo" width="320"/>
 
-> Premium Marvel Studios Collectible Figures & Toys — A futuristic, cinematic landing page experience.
+  # ⚡ MARVEL VAULT
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  > Premium Marvel Studios Collectible Figures & Toys — A futuristic, cinematic landing page experience.
+
+  [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+  [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+</div>
 
 ---
 
 ## 🌐 Live Demo
 
 👉 [https://kanishknegi2006-oss.github.io/marvel-site/](https://kanishknegi2006-oss.github.io/marvel-site/)
+
+---
+
+## 🖼️ Preview
+
+<div align="center">
+  <img src="assets/hero-loadout-preview.png" alt="Hero Loadout Preview" width="100%"/>
+  <br/><br/>
+  <img src="assets/hero-banner.png" alt="Hero Banner" width="100%"/>
+  <br/><br/>
+  <img src="assets/modal-preview.png" alt="Modal Preview" width="100%"/>
+</div>
+
+---
+
+## 🦸 Character Assets
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="assets/iron-man.png" alt="Iron Man" width="120"/><br/>
+        <b>Iron Man</b>
+      </td>
+      <td align="center">
+        <img src="assets/spider-man.png" alt="Spider-Man" width="120"/><br/>
+        <b>Spider-Man</b>
+      </td>
+      <td align="center">
+        <img src="assets/thor.png" alt="Thor" width="120"/><br/>
+        <b>Thor</b>
+      </td>
+      <td align="center">
+        <img src="assets/hulk.png" alt="Hulk" width="120"/><br/>
+        <b>Hulk</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="assets/captain-america.png" alt="Captain America" width="120"/><br/>
+        <b>Captain America</b>
+      </td>
+      <td align="center">
+        <img src="assets/black-panther.png" alt="Black Panther" width="120"/><br/>
+        <b>Black Panther</b>
+      </td>
+      <td align="center">
+        <img src="assets/doctor-strange.png" alt="Doctor Strange" width="120"/><br/>
+        <b>Doctor Strange</b>
+      </td>
+      <td align="center">
+        <img src="assets/avengers-logo-bg.png" alt="Avengers Logo" width="120"/><br/>
+        <b>Avengers Logo</b>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
@@ -67,10 +129,18 @@ The site will be available at `http://localhost:5173` (or similar Vite port).
 marvel-site/
 ├── assets/               # Images, logo, and other static assets
 │   ├── avengers-logo.png
+│   ├── avengers-logo-bg.png
+│   ├── hero-banner.png
 │   ├── hero-liquid-bg.png
+│   ├── hero-loadout-preview.png
+│   ├── modal-preview.png
 │   ├── iron-man.png
 │   ├── spider-man.png
-│   └── ...
+│   ├── thor.png
+│   ├── hulk.png
+│   ├── captain-america.png
+│   ├── black-panther.png
+│   └── doctor-strange.png
 ├── index.html            # Main landing page
 ├── collection.html       # Collection hub page
 ├── about-vault.html      # About / Hero Roster page
