@@ -200,9 +200,10 @@ function attachProductInteractions() {
 
             const cartCount = document.querySelector('.cart-count');
             if (cartCount) {
-                let count = parseInt(cartCount.textContent);
+                let count = parseInt(cartCount.textContent) || 0;
                 count++;
                 cartCount.textContent = count;
+                cartCount.style.display = 'flex';
                 cartCount.style.transform = 'scale(1.3)';
                 setTimeout(() => cartCount.style.transform = '', 200);
             }

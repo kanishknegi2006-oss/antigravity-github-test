@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kanishknegi2006-oss/antigravity-github-test.git"
+    "url": "git+https://github.com/kanishknegi2006-oss/marvel-site.git"
   },
   "keywords": [
     "marvel",
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/kanishknegi2006-oss/antigravity-github-test/issues"
   },
-  "homepage": "https://github.com/kanishknegi2006-oss/antigravity-github-test#readme",
+  "homepage": "https://kanishknegi2006-oss.github.io/marvel-site#readme",
   "devDependencies": {
     "eslint": "^8.0.0",
     "serve": "^14.2.0",
