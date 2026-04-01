@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/avengers-logo.png" alt="Marvel Vault Logo" width="320"/>
+  <img src="assets/avengers-logo-nobg.png" alt="Marvel Vault Logo" width="320"/>
 
   # ⚡ MARVEL VAULT
 
